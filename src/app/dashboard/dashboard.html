@@ -1,0 +1,13 @@
+<p>dashboard works!</p>
+<div class="dashboard">
+  <nav class="dashboard-nav">
+    <ul>
+      <li><a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tableau de bord</a></li>
+      <li><a routerLink="/dashboard/analytics" routerLinkActive="active">Analytiques</a></li>
+      <li><a routerLink="/dashboard/settings" routerLinkActive="active">Paramètres</a></li>
+    </ul>
+  </nav>
+  <div class="dashboard-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<p>forms works!</p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  @for (ctrl of formControls(); track ctrl.key; let idx = $index; let last = $last; let first = $first) {
+    <div>
+      <div>
+        {{ ctrl.key | titlecase }}
+      </div>
+<!--      [type]="ctrl.value.type"-->
+      <input  [formControlName]="ctrl.key">
+      @if (ctrl.value.errors && ctrl.value.touched) {
+        <!-- form.get(ctrl.key).invalid -->
+      <div class="error">
+        @if (ctrl.value.errors['required']) {
+          <div>Champ requis</div>
+        }
+        @if (ctrl.value.errors['minlength']) {
+          <div>Longueur minimum requise : {{ ctrl.value.errors['minlength']['requiredLength'] }}</div>
+        }
+      </div>
+        @if ($last) {
+          <div>Dernier</div>
+        }
+      }
+    </div>
+
+  }
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
+
+
+Valeur de toto: {{ toto }}
+
+<!--value du signal {{ mySignal() }}-->

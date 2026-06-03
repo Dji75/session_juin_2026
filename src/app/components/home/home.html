@@ -1,0 +1,15 @@
+<p>home works!</p>
+
+<div>
+  User: {{ monUser() | json }}
+</div>
+<div>
+  Is Guest ? {{ monUserRole() }}
+</div>
+
+<button type="button" (click)="changeRoleGuest()">Toggle role guest</button>
+<button type="button" (click)="updateName()">Update name</button>
+
+
+
+

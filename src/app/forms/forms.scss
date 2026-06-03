@@ -1,0 +1,13 @@
+div {
+  display: flex;
+}
+
+for > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: salmon;
+  margin: auto 1rem;
+}

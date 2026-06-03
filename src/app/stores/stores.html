@@ -1,0 +1,9 @@
+<p>stores works!</p>
+
+@for (todo of todos(); track todo.id) {
+  <div>{{ todo.title }} <button type="button" (click)="supprimerTodo(todo.id)" (keyup)="supprimerTodo(todo.id)">Supprimer</button></div>
+}
+
+
+<input type="text" #newTitle>
+<button type="button" (click)="ajouterTodo(newTitle.value)" (keyup)="ajouterTodo(newTitle.value)">Ajouter</button>

@@ -1,0 +1,15 @@
+<p>products works!</p>
+
+
+@for (product of products.value(); track product.id) {
+  <div [class.selected]="selectedId() === product.id">{{ product.id }} - {{ product.title }}</div>
+}
+<br/>
+<select name="selection" [value]="selectedId()" (change)="onChangeSelection($event)">
+  @for (product of products.value(); track product.id) {
+    <option [value]="product.id">{{ product.title }}</option>
+  }
+</select>
+
+<br/>
+<button type="button" (click)="updateList()">RELOAD LIST</button>
